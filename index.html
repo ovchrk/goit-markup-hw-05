@@ -18,7 +18,7 @@
             <nav class="main-nav">
                 <a href="./index.html" class="logo"><span class="logo-blue">Web</span>Studio</a>
                 <ul class="social-links">
-                    <li class="item"><a href="./index.html" class="link">Студія</a></li>
+                    <li class="item"><a href="./index.html" class="link current">Студія</a></li>
                     <li class="item"><a href="./portfolio.html" class="link">Портфоліо</a></li>
                     <li class="item"><a href="" class="link">Контакти</a></li>
                 </ul>
@@ -48,7 +48,7 @@
         <section class="section-hero">
             <div class="overlay">
                 <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-                <button type="button">Замовити послугу</button>
+                <button type="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
         <!-- Наші переваги-->
@@ -100,9 +100,32 @@
             <div class="container">
                 <h2 class="section-title">Чим ми займаємось</h2>
                 <ul class="activity">
-                    <li class="pic"><img src="images/img1.jpg" alt="Програми для ПК" width="370" height="294"></li>
-                    <li class="pic"><img src="images/img2.jpg" alt="Додатки для смартфонів" width="370" height="294"></li>
-                    <li class="pic"><img src="images/img3.jpg" alt="Дизайнерські рішення" width="370" height="294"></li>
+                    <li class="pic">
+                        <img src="images/img1.jpg" alt="Програми для ПК" width="370" height="294">
+                        <div class="activity-box">
+                            <p class="activity-text">
+                                Десктопні додатки
+                            </p>
+                        </div>
+                    
+                        
+                    </li>
+                    <li class="pic">
+                        <img src="images/img2.jpg" alt="Додатки для смартфонів" width="370" height="294">
+                        <div class="activity-box">
+                        <p class="activity-text">
+                            Мобільні додатки
+                        </p>
+                        </div>
+                    </li>
+                    <li class="pic">
+                        <img src="images/img3.jpg" alt="Дизайнерські рішення" width="370" height="294">
+                        <div class="activity-box">
+                            <p class="activity-text">
+                                Дизайнерські рішення
+                            </p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -352,5 +375,14 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="btn-close" data-modal-close> 
+                <svg class="close-icon" width="11" height="11">
+                    <use href="./images/symbol-defs.svg#icon-close"></use>
+                </svg></button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
