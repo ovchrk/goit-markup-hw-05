@@ -270,7 +270,7 @@ ul {
 
 .advantages h3 {
     width: 270px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -284,6 +284,7 @@ ul {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7;
+    margin: 0;
 
     color: var(--color-text);
 }
@@ -416,19 +417,16 @@ ul {
     background-color: transparent;
     fill: var(--icon-color-grey);
 
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms var(--timing-function), 
+    background-color 250ms var(--timing-function);
 }
-
-.member-item:not(:last-child) {
-    margin-right: 10px;
-}
-
 .member-icons .member-link:hover,
 .member-icons .member-link:focus {
     background-color: #2196F3;
     fill: #fff;
+}
+.member-item:not(:last-child) {
+    margin-right: 10px;
 }
 
 /*наши партнеры*/
@@ -531,7 +529,7 @@ ul {
 
     color: var(--color-links);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--timing-function);
 }
 
 .bottom-information a:hover,
@@ -560,7 +558,7 @@ ul {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--timing-function);
 }
 
 .bottom-social-links a:hover,
@@ -606,6 +604,7 @@ ul {
     border: none;
     border-radius: 4px;
     padding: 6px 22px;
+    cursor: pointer;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -728,7 +727,7 @@ ul {
     padding-left: 15px;
 }
 
-
+/*Modal*/
 .backdrop {
     position: fixed;
     top: 0;
@@ -739,7 +738,16 @@ ul {
 
     transition: opacity 250ms var(--timing-function);
 }
-/*Modal*/
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility:visible;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal {
     width: 528px;
     height: 581px;
@@ -748,11 +756,13 @@ ul {
     border-radius: 4px;;
 
     position: absolute;
-    transform: translate(-50%, -50%) scale(0.9);
     top: 50%;
     left: 50%;
 
-    transition: transform 250ms var(--timing-function);
+    transform: translate(-50%, -50%) scale(1);
+
+    transition: transform 250ms var(--timing-function), 
+    scale 250ms var(--timing-function);
     
 }
 .btn-close {
@@ -771,12 +781,4 @@ ul {
 }
 .close-icon {
     
-}
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-}
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.7);
 }
